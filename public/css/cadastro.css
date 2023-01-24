@@ -1,0 +1,176 @@
+.screen {
+    width: 100vw;
+    height: 100vh;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://cdn.identity-myprofile.bosch.com/themes/default/images/1-cr-21671_V2.jpg");
+}
+
+.card {
+    background-color: white;
+    width: 50%;
+    height: 60%;
+    border-radius: 15px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.sign-in {
+    display: flex;
+    background-color: var(--bosch-red-60);
+    color: rgb(0, 0, 0);
+    padding: 40px;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all .3s;
+}
+
+.create-account {
+    display: flex;
+    padding: 50px;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all .3s;
+}
+
+.card h1 {
+    font-size: 35px;
+}
+
+.card small {
+    color: rgba(70,70,70);
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-sign-in {
+    width: 150px;
+    height: 40px;    
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+    border: solid white 1px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btn-sign-in:hover {
+    color: var(--bosch-red-60);
+    background-color: white;
+    border: solid 1px black;
+    transform: scale(1.05);
+}
+
+.sign-in:focus-within {
+    width: 100%;
+}
+
+.create-account:focus-within {
+    width: 100%;
+}
+
+.icons {
+    margin-top: 10px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all .3s;
+    border: solid black 2px;
+}
+
+#facebook {
+    content: "";
+    width: 35px;
+    height: 35px;
+    background-image: url("facebook.png");
+    background-size: contain;
+}
+
+#facebook-hover:hover {
+    background-color: #3b5998;
+    color: white;
+}
+
+#google {
+    content: "";
+    width: 35px;
+    height: 35px;
+    background-image: url("google.png");
+    background-size: contain;
+}
+
+#google:hover {
+    animation: .4s rotate linear;
+}
+
+#linkedin {
+    content: "";
+    width: 35px;
+    height: 35px;
+    background-image: url("linkedin.png");
+    background-size: contain;
+}
+
+#likedin-hover:hover {
+    background-color: #0e76a8;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0) translateY(-5%) scale(1.1);
+    }
+    50% {
+        transform: rotate(180deg) translateY(-10%) scale(1.2);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.btn-sign-up {
+    width: 150px;
+    height: 40px;    
+    border-radius: 50px;
+    background-color: white;
+    color: var(--bosch-red-60);
+    border: solid black 1px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btn-sign-up:hover {
+    color: white;
+    background-color: var(--bosch-red-60);
+    border: solid 1px white;
+    transform: scale(1.05);
+}
