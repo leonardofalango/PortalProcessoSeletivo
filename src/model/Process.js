@@ -24,7 +24,7 @@ const Process = database.define('Process', {
 
 
 
-Process.hasOne(Jobs, { foreignKey: "FK_job" });
+Process.belongsTo(Jobs, { foreignKey: "FK_job" });
 
 // Process.belongsTo(Jobs, {
 //     constraint: true, //Garantir integridade referencial
