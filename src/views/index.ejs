@@ -47,15 +47,15 @@
                 <small>
                     Ou cadastre-se abaixo
                 </small>
-                <div class="inputs">
-                    <input type="text" class="input-field" placeholder="Usuario" id="user" name="user">
+                <form class="inputs" action="/register" method="POST">
+                    <input type="text" class="input-field" placeholder="Usuario" id="user" name="login">
                     <label for="user">Usuario</label>
-                    <input type="text" class="input-field" placeholder="Senha">
+                    <input type="text" class="input-field" placeholder="Senha" name="password">
                     <label for="user">Senha</label>
-                    <input type="text" class="input-field" placeholder="Nome Completo">
+                    <input type="text" class="input-field" placeholder="Nome Completo" name="name">
                     <label for="user">Nome Completo</label>
                     <button type="submit" class="btn-sign-up">sign-up</button>
-                </div>
+                </form>
 
             </div>
         </div>

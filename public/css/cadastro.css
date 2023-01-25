@@ -107,7 +107,7 @@
     content: "";
     width: 35px;
     height: 35px;
-    background-image: url("facebook.png");
+    background-image: url("../images/facebook.png");
     background-size: contain;
 }
 
@@ -120,7 +120,7 @@
     content: "";
     width: 35px;
     height: 35px;
-    background-image: url("google.png");
+    background-image: url("../images/google.png");
     background-size: contain;
 }
 
@@ -132,7 +132,7 @@
     content: "";
     width: 35px;
     height: 35px;
-    background-image: url("linkedin.png");
+    background-image: url("../images/linkedin.png");
     background-size: contain;
 }
 
