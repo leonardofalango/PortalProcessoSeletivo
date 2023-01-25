@@ -10,7 +10,6 @@ const CandidateXProcess = database.define('CandidateXProcess',{
     }
 });
 
-
 CandidateXProcess.belongsTo(Process, {
     constraint: true,
     foreignKey: 'id'
