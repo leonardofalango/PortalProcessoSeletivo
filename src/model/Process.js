@@ -1,6 +1,6 @@
 const sequelize = require('sequelize');
 const database = require('../config/db');
-const job = require('../model/Jobs');
+const Jobs = require('../model/Jobs');
 
 const Process = database.define('Process', {
     id: {
@@ -13,12 +13,22 @@ const Process = database.define('Process', {
     capacity: {
         type: sequelize.INTEGER,
         allowNull: false
+    },
+
+    FK_job: {
+        type: sequelize.INTEGER,
+        allowNull: false
     }
+
 });
 
-Process.belongsTo(job, {
-    constraint: true, //Garantir integridade referencial
-    foreignKey: 'id'
-   })
+
+
+Process.hasOne(Jobs, { foreignKey: "FK_job" });
+
+// Process.belongsTo(Jobs, {
+//     constraint: true, //Garantir integridade referencial
+//     foreignKey: 'id'
+// });
 
 module.exports = Process;
