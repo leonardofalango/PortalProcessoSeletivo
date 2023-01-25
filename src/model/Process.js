@@ -1,16 +1,16 @@
-const Sequelize = require('sequelize');
+const sequelize = require('sequelize');
 const database = require('../config/db');
 
-const Process = Sequelize.define('Process', {
+const Process = database.define('Process', {
     id: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
 
     capacity: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         allowNull: false
     }
 });
