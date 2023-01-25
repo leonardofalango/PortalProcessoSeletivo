@@ -1,5 +1,6 @@
 const sequelize = require('sequelize');
 const database = require('../config/db');
+const job = require('../model/Jobs');
 
 const Process = database.define('Process', {
     id: {
@@ -14,5 +15,10 @@ const Process = database.define('Process', {
         allowNull: false
     }
 });
+
+Process.belongsTo(job, {
+    constraint: true, //Garantir integridade referencial
+    foreignKey: 'id'
+   })
 
 module.exports = Process;

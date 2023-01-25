@@ -12,5 +12,3 @@ Process.belongsToMany(Candidate, {
     as: "Process_id", // trocar aqui também
     foreignKey: 'id'
 });
-
-module.exports = CandidateXProcess;
