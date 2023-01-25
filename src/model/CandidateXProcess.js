@@ -1,22 +1,15 @@
-const Sequelize = require('sequelize');
-const database = require('../config/db');
+const Candidate = require('./Candidate');
+const Process = require('./Process');
 
-const CandidateXProcess = database.define('CandidateXProcess',{
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
-    }
-});
-
-CandidateXProcess.belongsTo(Process, {
-    constraint: true,
+Candidate.belongsToMany(Process, {
+    through: "id",
+    as: "Candidate_id", // se ficar invertido os nomes, trocar por "Process_id"
     foreignKey: 'id'
 });
 
-CandidateXProcess.belongsTo(Candidate, {
-    constraint: true,
+Process.belongsToMany(Candidate, {
+    through: "id",
+    as: "Process_id", // trocar aqui também
     foreignKey: 'id'
 });
 
