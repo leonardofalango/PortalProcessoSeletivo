@@ -7,21 +7,39 @@
     <title>Pagina do Candidato | Registrar</title>
 
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/root.css">
 </head>
 <body>
-    <div class="card">
+    <form class="card" action="/registerEndPoint" method="post">
         <input type="text" id="name" name="name" value="<%=userData[0] %>" class="input">
         <label for="name">Nome</label>
         
+        <input type="text" id="user" name="logIn" value="<%=userData[1] %>" class="input">
+        <label for="user">Usuario</label>
+        
         <input type="text" id="pass" name="password" value="<%=userData[2] %>" class="input">
         <label for="password">Senha</label>
+        
+        <!-- <input type="text" id="pass-confirm" name="login" class="input">
+        <label for="user">Confirmar senha</label> -->
 
-        <input type="text" id="user" name="login" value="<%=userData[1] %>" class="input">
-        <label for="user">Usuario</label>
+        <input type="text" id="user" name="profile_pic" class="input">
+        <label for="user">profile_pic</label>
 
-    </div>
+        <input type="date" id="user" name="birthdate" class="input">
+        <label for="user">Birthdate</label>
+
+        <input type="text" id="user" name="address" class="input">
+        <label for="user">address</label>
+
+        <input type="text" id="user" name="cpf" class="input">
+        <label for="user">cpf</label>
+
+        <input type="text" id="user" name="curriculum" class="input">
+        <label for="user">curriculum</label>
+
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>

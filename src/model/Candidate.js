@@ -19,18 +19,18 @@ const Candidate = database.define('Candidate',{
         allowNull: false,
         unique: true
     },
+    
+    name: {
+        type: sequelize.STRING(100),
+        allowNull: false
+    },
 
     profile_pic: {
         type: sequelize.STRING(50),
 
         allowNull: false
     },
-
-    name: {
-        type: sequelize.STRING(100),
-        allowNull: false
-    },
-
+    
     birthdate: {
         type: sequelize.DATE(),
         allowNull: false
