@@ -1,12 +1,21 @@
-
-body{
-    background-color: #C6C5BA;
+*{
+    padding: 10px!important;
 }
 
 
+body{
+    background-color: #C6C5BA;
+    padding: 0!important;
+}
+html {
+    padding: 0!important;
+}
+
 header{
+    height: 50px;
     display: flex;
-    background-color:  #DEDDD5;;
+    align-items: center;
+    background-color:  #DEDDD5;
     justify-content: space-between;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding-right: 30px;
