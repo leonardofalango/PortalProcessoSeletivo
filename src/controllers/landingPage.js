@@ -3,6 +3,7 @@ const crypto = require('crypto')
 
 module.exports = {
     async getLandingPage(req, res){
+        console.log(req.session)
         res.render('../views/index');
     },
 
