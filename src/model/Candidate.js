@@ -53,4 +53,5 @@ const Candidate = database.define('Candidate',{
     }
 })
 
+
 module.exports = Candidate;

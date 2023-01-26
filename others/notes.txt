@@ -10,16 +10,4 @@ Terciary Color:
 Others:
 	R0 G0 B0 -> #000000
 
-const sequelize = require('sequelize');
-//configurações da base de dados
-const database = new sequelize('projetoJS', 'AulaJS', 'J@SqL0123_QWE',
-{
-    dialect: 'mssql', host:'localhost', port: 49721
-});
-database.sync();
-module.exports = database;
-
-// dialect: 'mssql', host:'localhost', port: 49721
-
-
 foreign key: https://sebhastian.com/sequelize-foreign-key/

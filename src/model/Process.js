@@ -20,6 +20,21 @@ const Process = database.define('Process', {
         allowNull: false
     },
 
+    details: {
+        type: sequelize.STRING('MAX'),
+        allowNull: false
+    },
+
+    phases: {
+        type: sequelize.INTEGER,
+        allowNull: false
+    },
+
+    subscription_fee: {
+        type: sequelize.FLOAT,
+        allowNull: false
+    },
+
     FK_job: {
         type: sequelize.INTEGER,
         allowNull: false

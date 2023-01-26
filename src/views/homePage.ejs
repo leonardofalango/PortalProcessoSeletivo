@@ -35,8 +35,8 @@
                     <% if (processData[i].FK_job == jobData[j].id) { %> 
                         <td><%= processData[i].date%></td> 
                         <td><%= jobData[j].name %></td> 
-                        <td><%= processData.capacity%></td> 
-                        <td>Link</td> 
+                        <td><%= processData[i].capacity%></td> 
+                        <td><a href="/process/Details/id=<%= processData[i].id %>"> Link </a></td> 
                     <% } %> 
 
                 <% } %> 

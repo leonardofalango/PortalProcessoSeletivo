@@ -2,13 +2,13 @@ const Candidate = require('./Candidate');
 const Process = require('./Process');
 
 Candidate.belongsToMany(Process, {
-    through: "id",
-    as: "Candidate_id", // se ficar invertido os nomes, trocar por "Process_id"
-    foreignKey: 'id'
+    through: "CandidateXProcess",
+    as: "Processes", // se ficar invertido os nomes, trocar por "Process_id"
+    foreignKey: 'Candidate_id'
 });
 
 Process.belongsToMany(Candidate, {
-    through: "id",
-    as: "Process_id", // trocar aqui também
-    foreignKey: 'id'
+    through: "CandidateXProcess",
+    as: "Candidates", // trocar aqui também
+    foreignKey: 'Process_id'
 });
