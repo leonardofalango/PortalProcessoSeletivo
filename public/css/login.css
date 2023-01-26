@@ -1,0 +1,70 @@
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    margin-top: 120px;
+    background-color: #ffffff;
+    height: 400px;
+    width: 450px;
+    padding: 20px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkbox {
+    margin-right: 5px;
+}
+
+
+.btn {
+    width: 200px;
+    height: 40px;    
+    border-radius: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s;
+    text-align: center;
+}
+
+.btn-login {
+    background-color: #008ecf;
+    color: white;
+}
+
+.btn-signIn {
+    background-color: #00cf26;
+    color: white;
+}
+
+.line {
+    text-align: center;
+}
+
+.line::before {
+    width: 150px;
+    height: 1px;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.line::after {
+    margin-left: 15px;
+    width: 150px;
+    height: 1px;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}

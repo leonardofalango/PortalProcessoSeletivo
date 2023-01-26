@@ -1,0 +1,42 @@
+body {
+    background-color: var(--secundary-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    font: "Bosch Office Sans";
+}
+
+
+.card {
+    margin-top: 5rem;
+    width: 25%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px;
+}
+
+.input {
+    border: none;
+    border-bottom: 2px solid var(--bosch-blue-40);
+    width: calc(100% - (2 * 1px));
+    font-size: 20px;
+    height: 30px;
+}
+#name {
+    text-transform: capitalize;
+}
+.card label {
+    position: relative;
+    top: -42px;
+    color: rgb(93, 93, 93);
+}
+
+.input-field:focus + label  {
+    border: none;
+    border-bottom: 2px solid var(--bosch-blue-40);
+}
+

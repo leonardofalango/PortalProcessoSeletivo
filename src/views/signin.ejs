@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina do Candidato | Login</title>
+    
+    <!-- links -->
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/inputs.css">
+</head>
+<body>
+    <form class="card flex">
+        <div class="flex">
+            <input type="text" class="input-field" placeholder="Nome de usuário" name="user" />
+            <input type="password" class="input-field" placeholder="Senha" name="password" id="pass"/>
+            <div class="password-show-field">
+                <input type="checkbox" class="checkbox" id="password-show" onclick="toggleShowPassword()">Mostrar senha
+            </div>
+            <button type="submit" class="btn btn-login">Entrar</button>
+            <a href="/aindaNaoTemLink">Esqueceu sua senha?</a>
+        </div>
+        <div class="line">ou</div>
+        <button type="button" class="btn btn-signIn" id="registerButton" onclick="redirect('/register')">Criar uma conta</button>
+    </form>
+    <script src="js/login.js"></script>
+</body>
+</html>
