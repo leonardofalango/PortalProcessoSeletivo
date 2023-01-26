@@ -1,0 +1,39 @@
+USE PortalProcesso
+
+-- SELECTS
+SELECT * FROM Candidates
+SELECT * FROM Jobs
+SELECT * FROM Processes
+
+
+-- INSERTS
+INSERT INTO Candidates (login, password, profile_pic, name, birthdate, address, cpf, curriculum, createdAt, updatedAt)
+VALUES
+('Lucas123','Lucas321','Sem foto', 'Lucas','10/10/2010' ,'Bosch', '12345678912', 'Sem curriculo', GETDATE(), GETDATE()),
+('Leo123','Leo321','Sem foto', 'Leo','10/11/2010','Bosch', '12345678913', 'Sem curriculo', GETDATE(), GETDATE())
+
+
+INSERT INTO Jobs (name, createdAt, updatedAt)
+VALUES
+('Programação', GETDATE(), GETDATE()),
+('Mecânico', GETDATE(), GETDATE())
+
+
+INSERT INTO Processes (capacity, date, details, phases, subscription_fee, FK_job, createdAt, updatedAt)
+VALUES
+(18, '10/10/2023', 'detalhes da vaga', 5, 10, 1, GETDATE(), GETDATE()),
+(18, '10/10/2022', 'detalhes da vaga', 5, 10, 1, GETDATE(), GETDATE())
+
+
+-- JOIN PARA MOSTRAR TRABALHO E CAPACIDADE
+SELECT J.name, P.date, P.capacity, P.phases, P.subscription_fee FROM jobs AS J
+JOIN Processes AS P
+ON J.id = P.FK_job
+
+
+-- DROP TABLES
+DROP TABLE Jobs
+
+DROP TABLE Candidates
+
+DROP TABLE Processes
