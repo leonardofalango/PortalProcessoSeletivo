@@ -1,4 +1,5 @@
 :root {
+    --font: "Bosch Office Sans"
     --primary-color: #C6C5BA;
     --secundary-color: #DEDDD5;
     --terciary-color: #D20A11;
@@ -60,4 +61,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Bosch Office Sans";
+    user-select: none;
+}
+
+@font-face {
+    font-family: "Bosch Office Sans";
+    src: local("Trickster"),
+      url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1), url("trickster-outline.otf")
+        format("opentype"), url("trickster-outline.woff") format("woff");
 }

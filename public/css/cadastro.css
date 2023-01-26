@@ -7,6 +7,12 @@
     background-image: url("https://cdn.identity-myprofile.bosch.com/themes/default/images/1-cr-21671_V2.jpg");
 }
 
+a {
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+}
+
 .card {
     background-color: white;
     width: 50%;

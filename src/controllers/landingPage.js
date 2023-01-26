@@ -5,15 +5,20 @@ module.exports = {
     async getLandingPage(req, res){
         res.render('../views/index');
     },
+
+    async getLogin(req, res){
+        res.render('../views/signin')
+    },
     
-    async getSignUp(req, res){
+    async postSignUp(req, res){
         const data = req.body
 
         const userData = [data.name, data.login, data.password]
         console.log(userData);
         
-        res.render('../views/signup', {data});
+        res.render('../views/signup', {userData : ['', '', '']});
     },
+
 
 
     async register(req, res){
