@@ -22,10 +22,6 @@ module.exports = {
             attributes: ['id', 'name']
         });
 
-        // const relData = await relation.findAll({
-        //     raw: true,
-        //     attributes: []
-        // })
 
         res.render("../views/homePage", { processData, candidateData, jobData });
     }

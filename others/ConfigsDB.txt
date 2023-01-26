@@ -1,4 +1,7 @@
-USE PortalProcesso
+USE master
+
+USE Teste3
+
 
 -- SELECTS
 SELECT * FROM Candidates
@@ -9,8 +12,8 @@ SELECT * FROM Processes
 -- INSERTS
 INSERT INTO Candidates (login, password, profile_pic, name, birthdate, address, cpf, curriculum, createdAt, updatedAt)
 VALUES
-('Lucas123','Lucas321','Sem foto', 'Lucas','10/10/2010' ,'Bosch', '12345678912', 'Sem curriculo', GETDATE(), GETDATE()),
-('Leo123','Leo321','Sem foto', 'Leo','10/11/2010','Bosch', '12345678913', 'Sem curriculo', GETDATE(), GETDATE())
+('Lucas123', 'Lucas321', 'Sem foto', 'Lucas', '10/10/2010', 'Bosch', '12345678912', 'Sem curriculo', GETDATE(), GETDATE()),
+('Leo123', 'Leo321', 'Sem foto', 'Leo', '10/11/2010', 'Bosch', '12345678913', 'Sem curriculo', GETDATE(), GETDATE())
 
 
 INSERT INTO Jobs (name, createdAt, updatedAt)
@@ -25,7 +28,7 @@ VALUES
 (18, '10/10/2022', 'detalhes da vaga', 5, 10, 1, GETDATE(), GETDATE())
 
 
--- JOIN PARA MOSTRAR TRABALHO E CAPACIDADE
+-- JOIN PARA MOSTRAR DADOS DO TRABALHO E DO PROCESSO 
 SELECT J.name, P.date, P.capacity, P.phases, P.subscription_fee FROM jobs AS J
 JOIN Processes AS P
 ON J.id = P.FK_job
