@@ -2,7 +2,6 @@ const sequelize = require('sequelize');
 const database = require('../config/db');
 const Process = require('../model/Process');
 
-
 const Jobs = database.define('Jobs',{
     id: {
         type: sequelize.INTEGER,
@@ -15,8 +14,5 @@ const Jobs = database.define('Jobs',{
         allowNull: false
     }
 });
-
-
-
 
 module.exports = Jobs;

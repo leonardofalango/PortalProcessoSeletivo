@@ -22,7 +22,6 @@
 
     <div class="main">
         <table class="container bordered centered highlight responsive-table">
-
             <tr>
                 <td><b>Data</b></td>
                 <td><b>Nome</b></td>
@@ -30,19 +29,18 @@
                 <td><b>Link</b></td>
             </tr>
 
-            <tr>
-                <td>08/10/2023</td>
-                <td>Mecatrônica</td>
-                <td>18</td>
-                <td>Saiba Mais</td>
-            </tr>
+            <% for (let i = 0; i < preocessData.length; i++) { %>
+                <% for (let j = 0; j < jobData.lenght; j++) { %>
 
-            <tr>
-                <td>08/10/2023</td>
-                <td>Mecatrônica</td>
-                <td>18</td>
-                <td>Saiba Mais</td>
-            </tr>
+                    <% if (processData[i].FK_job == jobData[j].id) { %> 
+                        <td><%= processData[i].date%></td> 
+                        <td><%= jobData[j].name %></td> 
+                        <td><%= processData.capacity%></td> 
+                        <td>Link</td> 
+                    <% } %> 
+
+                <% } %> 
+            <% } %> 
 
             <tr>
                 <td>08/10/2023</td>

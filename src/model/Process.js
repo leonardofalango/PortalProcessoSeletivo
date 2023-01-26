@@ -15,20 +15,17 @@ const Process = database.define('Process', {
         allowNull: false
     },
 
+    date: {
+        type: sequelize.DATE,
+        allowNull: false
+    },
+
     FK_job: {
         type: sequelize.INTEGER,
         allowNull: false
     }
-
 });
 
-
-
-Process.hasOne(Jobs, { foreignKey: "FK_job" });
-
-// Process.belongsTo(Jobs, {
-//     constraint: true, //Garantir integridade referencial
-//     foreignKey: 'id'
-// });
+Process.belongsTo(Jobs, { foreignKey: "FK_job" });
 
 module.exports = Process;
