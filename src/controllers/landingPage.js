@@ -40,6 +40,6 @@ module.exports = {
             cpf : data.cpf,
             curriculum : data.curriculum
         })
-        res.render('/')
+        res.redirect('/')
     },
 }

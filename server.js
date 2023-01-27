@@ -9,8 +9,8 @@ app.use(session({
     secret: 'senha',
     resave: true,
     cookie: {
-        user: 'valor a ser alterado usuario',
-        pass: 'senha123'
+        user: '',
+        pass: ''
     }
 }))
 
