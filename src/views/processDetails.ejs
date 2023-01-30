@@ -5,57 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/styleDetails.css">
-    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../../css/styleDetails.css">
+    <link rel="stylesheet" href="../../../css/root.css">
     <title>Detalhes do Processo</title>
 </head>
 
 <body>
-    <% require('header') %> 
 
+    <header>
+        <p> <a href="/homePage" style="text-decoration: none; color: black;">Voltar</a></p>
+        <p>Informações Sobre o Processo</p>
+    </header>
+   
     <div class="content">
         <div class="card">
 
             <div id="Process">
-                <p>Processo de Manufatura Avançada</p>
+                <p>Processo de <%=processo.Job.name%></p>
             </div>
 
             <div id="Detalhes">
-                <p>Detalhes sobre a vaga: Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ratione
-                    repellat ex magni enim aut a quasi voluptates molestias laudantium adipisci provident nemo illo,
-                    aperiam in? Dolorem laudantium explicabo harum?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, excepturi vitae adipisci quod quos
-                    animi, qui error dolorum, quasi nesciunt corrupti eum alias! Magnam quidem nostrum illo explicabo
-                    tenetur sint?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam soluta architecto et assumenda ducimus
-                    atque quo eum, quaerat praesentium corrupti fuga, fugiat velit cupiditate libero, temporibus
-                    sapiente minus consequuntur.
-                    Detalhes sobre a vaga: Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ratione
-                    repellat ex magni enim aut a quasi voluptates molestias laudantium adipisci provident nemo illo,
-                    aperiam in? Dolorem laudantium explicabo harum?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, excepturi vitae adipisci quod quos
-                    animi, qui error dolorum, quasi nesciunt corrupti eum alias! Magnam quidem nostrum illo explicabo
-                    tenetur sint?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam soluta architecto et assumenda ducimus
-                    atque quo eum, quaerat praesentium corrupti fuga, fugiat velit cupiditate libero, temporibus
-                    sapiente minus consequuntur.
-                </p>
+                <p>Detalhes sobre a vaga: <%= processo.details%></p>
             </div>
 
             <div class="Topics">
 
-                <p>Data limite de inscrição: 20/10/2023</p>
+                <p>Data limite de inscrição: <%= `${processo.date.getDay()}/${processo.date.getMonth()}/${processo.date.getFullYear()}`%></p>
 
-                <p>Requisitos mínimos: 20/10/2023</p>
+                <p>Taxa de inscrição: <%=processo.subscription_fee %></p>
 
-                <p>Taxa de inscrição: Gratuita</p>
+                <p>Etapas: <%=processo.phases %></p>
 
-                <p>Etapas: 5</p>
-
-                <p>Edital: Matemática nível Ensino Médio e bom domínio com a Lingua Portuguesa (Inglês vai ser
-                    considerado um diferencial)</p>
-
-                <p>Vagas: 18</p>
+                <p>Vagas: <%= processo.capacity %></p>
 
             </div>
 

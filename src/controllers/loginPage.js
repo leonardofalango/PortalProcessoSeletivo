@@ -3,6 +3,8 @@ const login = require('./login')
 const { saveLogin } = require('./saveLogin')
 const save = require('./saveLogin')
 
+
+
 module.exports = {
     
     async loginEndPoint(req, res){
@@ -10,8 +12,9 @@ module.exports = {
         let response = await login.login(req, res)
 
         if (response)
-            res.render('../views/homePage')
-        else res.redirect('login')
+            res.redirect('/homePage')
+            
+        else res.redirect('/login')
     },
 
     async loginAdmEndPoint(req, res) {
@@ -19,7 +22,7 @@ module.exports = {
         let response = await login.loginAdm(req, res)
 
         if (response)
-            res.render('../views/AdmHomePage')
-        res.redirect('login')
+            res.redirect('/AdmHomePage')
+        res.redirect('/login')
     }
 }

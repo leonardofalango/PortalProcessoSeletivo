@@ -30,15 +30,16 @@
 
             <% for (let i = 0; i < DataProcess.length; i++) { %>
                 <tr>
-                    <td><%= DataProcess[i].date %> </td> 
+                    <td><%= `${DataProcess[i].date.getDay()}/${DataProcess[i].date.getMonth()}/${DataProcess[i].date.getFullYear()}` %> </td> 
                     <td><%= DataProcess[i].Job.name %> </td> 
                     <td><%= DataProcess[i].capacity %> </td> 
-                    <td><a id="link" href="#"> Visualizar</a></td> 
+                    <td><a id="link" href="/process/Details/<%=DataProcess[i].id%>"> Visualizar</a></td> 
                 </tr>
             <% } %> 
 
         </table>
-    </div>
 
+    </div>
+ 
 </body>
 </html>
