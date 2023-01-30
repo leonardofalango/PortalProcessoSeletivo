@@ -1,14 +1,10 @@
+const sequelize = require('sequelize');
 const Candidate = require('./Candidate');
+const database = require('../config/db');
 const Process = require('./Process');
 
-Candidate.belongsToMany(Process, {
-    through: "CandidateXProcesses",
-    as: "Processes", // se ficar invertido os nomes, trocar por "Process_id"
-    foreignKey: 'Candidate_id'
-});
+const cadidateProcess = database.define('CandidateXProcesses', { })
+Candidate.belongsToMany(Process, { through: cadidateProcess })
+Process.belongsToMany(Candidate, { through: cadidateProcess })
 
-Process.belongsToMany(Candidate, {
-    through: "CandidateXProcesses",
-    as: "Candidates", // trocar aqui também
-    foreignKey: 'Process_id'
-});
+module.exports = cadidateProcess;

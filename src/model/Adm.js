@@ -12,6 +12,7 @@ const Adm = database.define('Adm',{
     login: {
         type: sequelize.STRING(80),
         allowNull: false,
+        unique: true
     },
 
     password: {

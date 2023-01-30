@@ -12,12 +12,12 @@ const Candidate = database.define('Candidate',{
     login: {
         type: sequelize.STRING(80),
         allowNull: false,
+        unique: true
     },
 
     password: {
         type: sequelize.STRING(200),
         allowNull: false,
-        unique: true
     },
     
     name: {
@@ -52,6 +52,5 @@ const Candidate = database.define('Candidate',{
         allowNull: false,
     }
 })
-
 
 module.exports = Candidate;

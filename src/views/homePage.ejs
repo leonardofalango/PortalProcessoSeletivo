@@ -29,18 +29,7 @@
                 <td><b>Link</b></td>
             </tr>
 
-            <% for (let i = 0; i < preocessData.length; i++) { %>
-                <% for (let j = 0; j < jobData.lenght; j++) { %>
-
-                    <% if (processData[i].FK_job == jobData[j].id) { %> 
-                        <td><%= processData[i].date%></td> 
-                        <td><%= jobData[j].name %></td> 
-                        <td><%= processData[i].capacity%></td> 
-                        <td><a href="/process/Details/id=<%= processData[i].id %>"> Visualizar </a></td> 
-                    <% } %> 
-
-                <% } %> 
-            <% } %> 
+            
 
             <tr>
                 <td>08/10/2023</td>

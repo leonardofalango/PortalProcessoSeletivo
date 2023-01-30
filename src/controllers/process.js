@@ -1,7 +1,11 @@
+const login = require('./login')
+
 
 module.exports = {
     async processDetailsGet(req, res){
-        res.render('../views/processDetails');
+        if (login)
+            res.render('../views/processDetails');
+        res.redirect("/")
     }
     
 }
