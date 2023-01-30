@@ -13,23 +13,16 @@ module.exports = {
             res.render('../views/401')
         
         else {
-            const processData = await process.findAll({
-                raw: true,
-                attributes: ['id', 'capacity', 'FK_job', 'details', 'phases', 'subscription_fee']
+            const DataProcess = await process.findAll({
+                attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date'],
+                include: [{
+                    model: job,
+                    required: true,
+                    attributes: ['name'] 
+                }]
             });
 
-            const candidateData = await user.findAll({
-                raw: true,
-                attributes: ['id', 'login', 'password', 'profile_pic', 'name', 'birthdate', 'address', 'cpf', 'curriculum']
-            });
-
-            const jobData = await job.findAll({
-                raw: true,
-                attributes: ['id', 'name']
-            });
-
-
-            res.render("../views/homePage", { processData, candidateData, jobData });
+            res.render("../views/homePage", { DataProcess });
         }
     }
 

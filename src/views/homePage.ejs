@@ -1,22 +1,21 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/styleHomePage.css">
-    <link rel="stylesheet" href="/public/css/root.css">
+    <link rel="stylesheet" href="css/HomePage.css">
+    <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <title>Home Page</title>
 </head>
 <body>
 
     <div class="header">
-        <p>Home Page</p>
-        <p>Sair</p>
+        <p><a href="#" style="text-decoration: none; color: black;">Sair</a></p>
+        <p>Tela de Candidato</p>
     </div>
 
-    <div class="Processos">
+    <div id="Processo">
         <p>Lista de Processos</p>
     </div>
 
@@ -29,14 +28,14 @@
                 <td><b>Link</b></td>
             </tr>
 
-            
-
-            <tr>
-                <td>08/10/2023</td>
-                <td>Mecatrônica</td>
-                <td>18</td>
-                <td>Saiba Mais</td>
-            </tr>
+            <% for (let i = 0; i < DataProcess.length; i++) { %>
+                <tr>
+                    <td><%= DataProcess[i].date %> </td> 
+                    <td><%= DataProcess[i].Job.name %> </td> 
+                    <td><%= DataProcess[i].capacity %> </td> 
+                    <td><a id="link" href="#"> Visualizar</a></td> 
+                </tr>
+            <% } %> 
 
         </table>
     </div>

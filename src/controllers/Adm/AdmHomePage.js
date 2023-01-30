@@ -10,17 +10,18 @@ const login = require('../../controllers/login')
 module.exports = {
     
     async AdmHomePageGet(req, res) {
-        const response = await login.loginAdm(req, res)
+        const response = await login.login(req, res)
+    
         if (!response)
             res.render('../views/401')
-
+        
         else {
             const QtdCandidates = await relation.findAll({
                 raw: true,
                 group: "ProcessId",
                 attributes: ['ProcessId', [database.fn('COUNT', database.col('CandidateId')), 'quantCandidates']]
             });
-        
+            
 
             const DataProcess = await process.findAll({
                 attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee'],

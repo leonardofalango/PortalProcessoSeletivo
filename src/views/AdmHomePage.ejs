@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="css/HomePage.css">
+    <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <title>Adm's Home Page</title>
 </head>
@@ -13,8 +13,8 @@
 
     
 <div class="header">
-    <p><a href="/homePage" style="text-decoration: none; color: black;">Voltar</a></p>
-    <p>Informações Sobre o Processo</p>
+    <p><a href="#" style="text-decoration: none; color: black;">Sair</a></p>
+    <p>Tela de Administrador</p>
 </div>
 
     <div id="Processo">
@@ -38,7 +38,15 @@
                 <td><b>Editar</b></td>
             </tr>
 
-       
+            <% for (let i = 0; i < DataProcess.length; i++) { %>
+                <td><%= DataProcess[i].name %> </td> 
+                <td><%= DataProcess[i].date %> </td> 
+                <td><%= DataProcess[i].QtdInscritos %> </td> 
+                <td> <a id="link" href="#"> Visualizar</a>  </td> 
+                <td> <a id="link" href="#"> Editar</a> </td> 
+            <% } %>  
+
+
         </table>
     </div>
 
