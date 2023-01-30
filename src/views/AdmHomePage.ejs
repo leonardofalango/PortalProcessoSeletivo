@@ -40,7 +40,7 @@
 
             <% for (let i = 0; i < DataProcess.length; i++) { %>
                 <td><%= DataProcess[i].name %> </td> 
-                <td><%= DataProcess[i].date %> </td> 
+                <td><%= formatData(DataProcess[i].date) %> </td> 
                 <td><%= DataProcess[i].QtdInscritos %> </td> 
                 <td> <a id="link" href="#"> Visualizar</a>  </td> 
                 <td> <a id="link" href="#"> Editar</a> </td> 
@@ -49,6 +49,6 @@
 
         </table>
     </div>
-
+    <script src="js/data.js"></script>
 </body>
 </html>
