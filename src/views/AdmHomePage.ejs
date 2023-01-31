@@ -64,13 +64,38 @@
                 <td><b>Editar</b></td>
             </tr>
 
+            
+
             <% for (let i = 0; i < DataProcess.length; i++) { %>
                 <td><%= DataProcess[i].Job.name %> </td> 
                 <td><%= `${DataProcess[i].date.getDay()}/${DataProcess[i].date.getMonth()}/${DataProcess[i].date.getFullYear()}` %> </td> 
                 <td><%= DataProcess[i].QtdInscritos %> </td> 
-                <td> <a id="link" href="/process/Details/?id=<%=DataProcess[i].id%>"> Visualizar</a></td> 
-                <td> <a id="link" href="#"> Editar</a> </td> 
-            <% } %>  
+                <td> <a id="link" href="/process/Details/<%=DataProcess[i].id%>"> Visualizar</a></td> 
+                <td> <a id="link" href="#popup2/Editar/<%=DataProcess[i].id%>"> Editar</a> </td> 
+
+                <!-- Card p/ Editar os dados do processo seletivo -->
+                <div id="popup2" class="overlay"> 
+                    <div class="popup">
+                        <h3>Criar Processo</h3>
+                        <a class="close" href="#">&times;</a>
+                        <div class="content">
+                            <form action="POST">
+                                <input type="text" name="job" id="job" value="<%=DataProcess[i].Job.name %>"  required> 
+                                <input type="number" name="capacity" id="capacity" value=<%=DataProcess[i].capacity %> required>
+                                <input type="date" name="date" id="date" value=<%=DataProcess[i].date %> required>
+                                <input type="number" name="phases" id="phases" value=<%=DataProcess[i].phases %> required>
+                                <textarea name="details" id="textArea" value=<%=DataProcess[i].details %> style="overflow-y: hidden;" required></textarea>
+                                <input type="number" name="subscription_fee" id="subscription_fee" value=<%=DataProcess[i].details %> required>
+                                <button type="submit" class="btn">Editar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            <% } %>
+
+            
+            
 
         </table>
     </div>
