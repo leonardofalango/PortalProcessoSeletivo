@@ -11,15 +11,12 @@ module.exports = {
                 raw: true,
                 attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date'],
                 include: [{
+                    raw: true,
                     model: job,
                     required: true,
                     attributes: ['name'] 
                 }]
             })
-
-            console.log(processo)
-            console.log(processo.Job.name)
-            console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 
             res.render('../views/processDetails', {processo});
         }
