@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/HomePage.css">
+    <link rel="stylesheet" href="css/CreateProcess.css">
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-    <title>Adm's Home Page</title>
+    <title>Administrador | Home Page</title>
 </head>
 <body>
 
-    
 <div class="header">
     <p><a href="#" style="text-decoration: none; color: black;">Sair</a></p>
     <p>Tela de Administrador</p>
@@ -26,7 +26,33 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td><a id="link" href="#"> Criar Outro Processo</a></td>
+
+                <td>
+                    <div class="box">
+                        <a id="buttonCreate" href="#popup1">Criar Processo</a>
+                    </div>
+                    
+                    <div id="popup1" class="overlay">
+                        <div class="popup">
+                            <h3>Criar Processo</h3>
+                            <a class="close" href="#">&times;</a>
+                            
+                            <div class="content">
+                                <form action="POST">
+                                    <input type="text" name="job" id="job" placeholder="Nome da Vaga" required> 
+                                    <input type="number" name="capacity" id="capacity" placeholder="Capacidade" required>
+                                    <input type="date" name="date" id="date" placeholder="Data Limite de Inscrição" required>
+                                    <input type="number" name="phases" id="phases" placeholder="Quantidade de Fases" required>
+                                    <textarea name = "description" id="textArea" placeholder="Detalhes da Vaga" style="overflow-y: hidden;" required></textarea>
+                                    <input type="number" name="subscription_fee" id="subscription_fee" placeholder="Taxa de Inscrição" required>
+                                    <button type="submit" class="btn">Criar</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </td>
+
                 <td></td>
                 <td></td>
             </tr>
@@ -45,7 +71,6 @@
                 <td> <a id="link" href="/process/Details/?id=<%=DataProcess[i].id%>"> Visualizar</a></td> 
                 <td> <a id="link" href="#"> Editar</a> </td> 
             <% } %>  
-
 
         </table>
     </div>
