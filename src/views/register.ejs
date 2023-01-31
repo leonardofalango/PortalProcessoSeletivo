@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar | Portal do Candidato</title>
+    <link rel="stylesheet" type="text/css" href="css/multistepform.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+    <form id="regForm" class="card" action="../registerEndPoint" method="post">
+        <h1 class="title">Registrar:</h1>
+        <div class="tab">Nome completo:
+            <p>
+                <input name="name" placeholder="Nome Completo..."
+                    oninput="this.className = ''" value="<%=userData[0] %>"
+                    id="name" onchange="changeName()">
+            </p>
+            <p>
+                <input name="user" placeholder="Usuario..."
+                    oninput="this.className = ''" value="<%=userData[1] %>">
+            </p>
+        </div>
+        
+        <div class="tab title">Contato:
+            <p>
+                <input name="email" placeholder="E-mail..."
+                    oninput="this.className = ''">
+            </p>
+            <p>
+                <input name="cpf" placeholder="CPF..."
+                    oninput="this.className = ''">
+            </p>
+        </div>
+        
+        <div class="tab title">Informações adicionais:
+            <p>
+                <input type="date" name="birthdate" oninput="this.className = ''">
+            </p>
+            <p>
+                <input name="address" placeholder="Endereço" oninput="this.className = ''">
+            </p>
+        </div>
+        
+        <div class="tab title">Estamos quase acabando...
+            <div class="profile">
+                <div class="profile-cover">
+                    <div class="profile-pic" id="profile-pic">
+                        <input type="file" hidden id="input-profile-pic">
+                    </div>
+                </div>
+                <div class="profile-name">
+                    <p id="profile-changeName">
+                        defaultName
+                    </p>
+                </div>
+                <div class="profile-curriculum">
+                    <input name="curriculum" id="curriculum" type="file" hidden value="default.png">
+                    <label for="curriculum" class="inputfile">Curriculum</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab title">Crie sua senha!
+            <p>
+                <input name="pass" id="pass" placeholder="Senha..."
+                    oninput="this.className = ''">
+            </p>
+            <p>
+                <input id="pass-confirm" placeholder="Confirme sua senha..."
+                    oninput="this.className = ''" onchange="confirmPass()">
+            </p>
+        </div>
+        
+        <div style="overflow:auto;">
+            <div style="float:right;">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div>
+        
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+    <script src="../js/multistepform.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+</html>

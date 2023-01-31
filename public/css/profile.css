@@ -1,0 +1,83 @@
+.profile {
+    height: 350px;
+    width: 100%;
+    background-color: aliceblue;
+}
+
+.profile-cover {
+    height: 40%;
+    width: 100%;
+    background-image: url("../images/cover.jpg");
+    background-size: cover;
+}
+
+.profile-pic {
+    width: 10rem;
+    height: 10rem;
+    padding: 0;
+    background-image: url("../images/profilepic.png");
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+    top: calc(100% - (10rem / 2));
+    margin: 0px auto;
+    transition: all .3s;
+}
+
+.profile-pic::after {
+    background-color: rgb(199, 198, 198);
+    background-image: url("../images/camera.png");
+    background-size: 1.5rem;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    content: '';
+    position: relative;
+    top: 65%;
+    left: 75%;
+    border-radius: 50%;
+}
+
+.profile-pic:hover{
+    filter: blur(2.5px);
+}
+
+.profile-name {
+    width: fit-content;
+    position: relative;
+    top: 30%;
+    margin: 0 auto;
+    font-weight: 800;
+    font-size: 1.45rem;
+}
+
+.profile-curriculum {
+    width: fit-content;
+    position: relative;
+    top: 35%;
+    margin: 0 auto;
+}
+
+
+.inputfile {
+    max-width: 80%;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 0.625rem 1.25rem;
+}
+
+.inputfile {
+    color: #f1e5e6;
+    background-color: #2fb266;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+.inputfile:hover {
+    background-color: #3a9083;
+}

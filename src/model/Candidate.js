@@ -50,6 +50,12 @@ const Candidate = database.define('Candidate',{
     curriculum: {
         type: sequelize.STRING(),
         allowNull: false,
+    },
+
+    email: {
+        type: sequelize.STRING(80),
+        allowNull: false,
+        unique: true
     }
 })
 

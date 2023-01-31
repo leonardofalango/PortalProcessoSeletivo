@@ -19,7 +19,7 @@ module.exports = {
             res.render('../views/signup', {userData})
         console.log(userData);
         
-        res.render('../views/signup', {userData : ['', '', '']});
+        res.render('../views/register', {userData : ['', '', '']});
     },
 
 
