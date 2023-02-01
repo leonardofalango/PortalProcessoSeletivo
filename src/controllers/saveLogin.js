@@ -10,5 +10,10 @@ module.exports = {
         req.session.user = body.user
         let hash = crypto.createHash('md5').update(body.password).digest('hex')
         req.session.pass = hash
+    },
+
+    async unsaveLogin(req, res) {
+        req.session.user = ''
+        req.session.pass = ''
     }
 }

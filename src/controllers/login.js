@@ -1,4 +1,6 @@
 const Candidate = require('../model/Candidate');
+const adm = require('../model/Adm');
+const saveLogin = require('./saveLogin');
 
 module.exports = {
     async login(req, res) {
@@ -9,7 +11,7 @@ module.exports = {
                 password: req.session.pass
             }
         })
-        return cand != null;
+        return cand !== null;
     },
 
     async loginAdm(req, res) {
@@ -20,6 +22,11 @@ module.exports = {
                 password: req.session.pass
             }
         })
-        return admUser != null;
+        return admUser !== null;
     },
+
+    async disconnect(req, res) {
+        saveLogin.unsaveLogin(req, res)
+        res.redirect('/')
+    }
 }

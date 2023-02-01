@@ -20,7 +20,7 @@
                     id="name" onchange="changeName()">
             </p>
             <p>
-                <input name="user" placeholder="Usuario..."
+                <input name="logIn" placeholder="Usuario..."
                     oninput="this.className = ''" value="<%=userData[1] %>">
             </p>
         </div>
@@ -49,7 +49,7 @@
             <div class="profile">
                 <div class="profile-cover">
                     <div class="profile-pic" id="profile-pic">
-                        <input type="file" hidden id="input-profile-pic">
+                        <input type="file" hidden id="input-profile-pic" name="profile_pic">
                     </div>
                 </div>
                 <div class="profile-name">
@@ -66,7 +66,7 @@
         
         <div class="tab title">Crie sua senha!
             <p>
-                <input name="pass" id="pass" placeholder="Senha..."
+                <input name="pass" id="password" placeholder="Senha..."
                     oninput="this.className = ''">
             </p>
             <p>
