@@ -7,6 +7,7 @@ const process = require('./src/controllers/process');
 const login = require('./src/controllers/loginPage');
 const AdmHomePage = require('./src/controllers/Adm/AdmHomePage');
 const recoveryPage = require('./src/controllers/recover')
+const disc = require('./src/controllers/login')
 
 route.get('/', home.getLandingPage);
 route.get('/login', home.getLogin);
@@ -15,6 +16,7 @@ route.get('/register', home.postSignUp)
 route.get('/process/Details/:id',process.processDetailsGet);
 route.get('/AdmHomePage',AdmHomePage.AdmHomePageGet);
 route.get('/login/recover', recoveryPage.recoverPageGet)
+route.get('/disconnect', disc.disconnect)
 
 route.post('/register', home.postSignUp) 
 route.post('/registerEndPoint', home.register)
