@@ -15,12 +15,7 @@ module.exports = {
         else 
         {
             const DataProcess = await process.findAll({
-                attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date'],
-                include: [{
-                    model: job,
-                    required: true,
-                    attributes: ['name'] 
-                }]
+                attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date']
             });
         
             res.render("../views/homePage", { DataProcess });
