@@ -10,10 +10,14 @@ module.exports = {
     async loginEndPoint(req, res){
         await save.saveLogin(req, res)
         let response = await login.login(req, res)
-
+        let responseAdm = await login.loginAdm(req, res)
+        
         if (response)
             res.redirect('/homePage')
-            
+        
+        else if (responseAdm)
+            res.redirect('/AdmHomePage')
+
         else res.redirect('/login')
     },
 

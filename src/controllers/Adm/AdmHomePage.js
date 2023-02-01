@@ -10,7 +10,7 @@ const login = require('../../controllers/login')
 module.exports = {
     
     async AdmHomePageGet(req, res) {
-        const response = await login.login(req, res)
+        const response = await login.loginAdm(req, res)
     
         if (!response)
             res.render('../views/401')

@@ -16,7 +16,7 @@ module.exports = {
 
         const userData = [data.name, data.login, data.password]
         if (userData[0] || userData[1] || userData[2])
-            res.render('../views/signup', {userData})
+            res.render('../views/register', {userData})
         console.log(userData);
         
         res.render('../views/register', {userData : ['', '', '']});
@@ -27,12 +27,13 @@ module.exports = {
     async register(req, res){
         const data = req.body
 
-        console.log(data.password)
-        let hash = crypto.createHash('md5').update(data.password).digest('hex')
+        console.log(data);
+        let hash = crypto.createHash('md5').update(data.pass).digest('hex')
 
         await user.create({
             name : data.name,
             login : data.logIn,
+            email: data.email,
             password : hash,
             profile_pic : data.profile_pic,
             birthdate : data.birthdate,
