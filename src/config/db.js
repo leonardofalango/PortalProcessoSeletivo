@@ -1,6 +1,6 @@
 const sequelize = require('sequelize');
 //configurações da base de dados
-const database = new sequelize('take5', 'AulaJS', 'J@SqL0123_QWE',
+const database = new sequelize('take7', 'AulaJS', 'J@SqL0123_QWE',
 {
     dialect: 'mssql', host:'localhost', port: 49721
 });

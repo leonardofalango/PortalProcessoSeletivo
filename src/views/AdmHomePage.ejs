@@ -13,7 +13,7 @@
 <body>
 
 <div class="header">
-    <p><a href="/" style="text-decoration: none; color: black;">Sair</a></p>
+    <p><a href="/disconnect" style="text-decoration: none; color: black;">Sair</a></p>
     <p>Tela de Administrador</p>
 </div>
 
@@ -38,7 +38,7 @@
                             <a class="close" href="#">&times;</a>
                             
                             <div class="content">
-                                <form action="POST">
+                                <form method="POST" action="/AdmHomePageEndPoint">
                                     <input type="text" name="job" id="job" placeholder="Nome da Vaga" required> 
                                     <input type="number" name="capacity" id="capacity" placeholder="Capacidade" required>
                                     <input type="date" name="date" id="date" placeholder="Data Limite de Inscrição" required>
@@ -67,35 +67,36 @@
             
 
             <% for (let i = 0; i < DataProcess.length; i++) { %>
-                <td><%= DataProcess[i].Job.name %> </td> 
-                <td><%= `${DataProcess[i].date.getDay()}/${DataProcess[i].date.getMonth()}/${DataProcess[i].date.getFullYear()}` %> </td> 
+                <tr>
+                <td><%= DataProcess[i].job %> </td> 
+                <td><%= DataProcess[i].date%> </td> 
                 <td><%= DataProcess[i].QtdInscritos %> </td> 
                 <td> <a id="link" href="/process/Details/<%=DataProcess[i].id%>"> Visualizar</a></td> 
-                <td> <a id="link" href="#popup2/Editar/<%=DataProcess[i].id%>"> Editar</a> </td> 
+                <td> <a id="link" href="#popup2%>" onclick="(() => {changeProcess(<%=i%>, <%=JSON.stringify(DataProcess)%>)}) ()"> Editar</a> </td> 
 
-                <!-- Card p/ Editar os dados do processo seletivo -->
-                <div id="popup2" class="overlay"> 
+                <div id="popup2" class="overlay">  
                     <div class="popup">
-                        <h3>Criar Processo</h3>
+                        <h3>Editar Processo</h3>
                         <a class="close" href="#">&times;</a>
                         <div class="content">
-                            <form action="POST">
-                                <input type="text" name="job" id="job" value="<%=DataProcess[i].Job.name %>"  required> 
-                                <input type="number" name="capacity" id="capacity" value=<%=DataProcess[i].capacity %> required>
-                                <input type="date" name="date" id="date" value=<%=DataProcess[i].date %> required>
-                                <input type="number" name="phases" id="phases" value=<%=DataProcess[i].phases %> required>
-                                <textarea name="details" id="textArea" value=<%=DataProcess[i].details %> style="overflow-y: hidden;" required></textarea>
-                                <input type="number" name="subscription_fee" id="subscription_fee" value=<%=DataProcess[i].details %> required>
+                            <form method="POST" action="/editProcess">
+                                <input type="text" name="id" value="" hidden>
+                                <input type="text" name="job" id="job" value=""  required> 
+                                <input type="number" name="capacity" id="capacity" required>
+                                <input type="date" name="date" id="date" required>
+                                <input type="number" name="phases" id="phases" required>
+                                <textarea name="details" id="textArea" style="overflow-y: hidden;" required></textarea>
+                                <input type="number" name="subscription_fee" id="subscription_fee" required>
                                 <button type="submit" class="btn">Editar</button>
                             </form>
                         </div>
                     </div>
                 </div>
-
+                </tr>
             <% } %>
 
         </table>
     </div>
-
+    <script src="js/editProcess.js"></script>
 </body>
 </html>

@@ -1,41 +1,70 @@
 
 const candidate = require('../../model/Candidate')
 const process = require('../../model/Process')
-const job = require('../../model/Jobs')
 const adm = require('../../model/Adm')
 const relation = require('../../model/CandidateXProcess')
 const database = require('../../config/db')
 const login = require('../../controllers/login')
+const { Sequelize } = require('sequelize')
+const admcand = require('../../controllers/Adm/AdmCandidate')
 
 module.exports = {
-    
+
     async AdmHomePageGet(req, res) {
         const response = await login.loginAdm(req, res)
-    
+
         if (!response)
             res.render('../views/401')
-        
+
         else {
             const QtdCandidates = await relation.findAll({
                 raw: true,
                 group: "ProcessId",
                 attributes: ['ProcessId', [database.fn('COUNT', database.col('CandidateId')), 'quantCandidates']]
             });
-            
+
 
             const DataProcess = await process.findAll({
-                attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee'],
-                include: [{
-                    model: job,
-                    required: true,
-                    attributes: ['name']
-                }],
+                attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'job'],
             });
 
 
 
-            res.render("../views/AdmHomePage", { QtdCandidates, DataProcess});
+            res.render("../views/AdmHomePage", { QtdCandidates, DataProcess });
         }
+    },
+
+    async InsertProcess(req, res) {
+        const data = req.body;
+
+        await process.create({
+            job: data.job,
+            capacity: data.capacity,
+            date: data.date,
+            phases: data.phases,
+            details: data.description,
+            subscription_fee: data.subscription_fee
+        })
+        res.redirect('/AdmHomePage')
+    },
+
+    async UpdateProcess(req, res) {
+        const data = req.body;
+
+        await process.update({
+            job: data.job,
+            capacity: data.capacity,
+            date: data.date,
+            phases: data.phases,
+            details: data.details,
+            subscription_fee: data.subscription_fee
+        },
+        {
+            where: {
+                id: data.id
+            }
+        })
+        res.redirect('/AdmHomePage')
     }
 
 }

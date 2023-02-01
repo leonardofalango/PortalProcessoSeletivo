@@ -1,7 +1,6 @@
 const { name } = require('ejs');
 const user = require('../model/Candidate')
 const process = require('../model/Process')
-const job = require('../model/Jobs')
 const relation = require('../model/CandidateXProcess')
 const login = require('./login')
 

@@ -11,7 +11,7 @@
 <body>
 
     <div class="header">
-        <p><a href="/" style="text-decoration: none; color: black;">Sair</a></p>
+        <p><a href="/disconnect" style="text-decoration: none; color: black;">Sair</a></p>
         <p>Tela de Candidato</p>
     </div>
 
@@ -31,7 +31,7 @@
             <% for (let i = 0; i < DataProcess.length; i++) { %>
                 <tr>
                     <td><%= `${DataProcess[i].date.getDay()}/${DataProcess[i].date.getMonth()}/${DataProcess[i].date.getFullYear()}` %> </td> 
-                    <td><%= DataProcess[i].Job.name %> </td> 
+                    <td><%= DataProcess[i].job %> </td> 
                     <td><%= DataProcess[i].capacity %> </td> 
                     <td><a id="link" href="/process/Details/<%=DataProcess[i].id%>"> Visualizar</a></td> 
                 </tr>

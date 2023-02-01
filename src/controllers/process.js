@@ -1,6 +1,5 @@
 const login = require('./login')
 const process = require('../model/Process');
-const job = require('../model/Jobs')
 
 
 module.exports = {
@@ -9,13 +8,8 @@ module.exports = {
         if (login) {
             const processo = await process.findByPk(req.params.id, {
                 raw: true,
-                attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date'],
-                include: [{
-                    raw: true,
-                    model: job,
-                    required: true,
-                    attributes: ['name'] 
-                }]
+                attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date', 'job']
+
             })
 
             res.render('../views/processDetails', {processo});
