@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/AdmProcessDetails.css">
+    <link rel="stylesheet" href="css/root.css">
+    <title>Detalhes do Processo</title>
+</head>
+
+<body>
+
+    <header>
+        <p> <a href="/homePage" style="text-decoration: none; color: black;">Voltar</a></p>
+        <p>Detalhes Sobre a Vaga</p>
+    </header>
+   
+    <div class="content">
+        <div class="card">
+
+            <div id="Process">
+                <p>Processo de <%= processo.job %></p>
+            </div>
+
+            <div id="Detalhes">
+                <p>Detalhes sobre a vaga: <%= processo.details%></p>
+            </div>
+
+            <div class="Topics">
+                <p>Data limite de inscrição: <%= `${processo.date.getDay()}/${processo.date.getMonth()}/${processo.date.getFullYear()}` %></p>
+
+                <p>Taxa de inscrição: R$<%=processo.subscription_fee %></p>
+
+                <p>Etapas: <%=processo.phases %></p>
+
+                <p>Vagas: <%= processo.capacity %></p>
+            </div>
+
+           
+                <details class="xisde">
+                    <summary class="btn ">Ver Inscritos</summary>
+            
+
+                    <table class="container bordered  highlight responsive-table" style="position: relative;
+                    top: -50px;
+                    left: 10rem;">
+
+                        
+                            <tr>
+                                <td><b>Foto</b></td>
+                                <td><b>Nome</b></td>
+                                <td><b>Detalhes</b></td>
+                                <td><b>Excluir</b></td>
+                            </tr>
+
+                            <%for (let i = 0; i < DataCandidate.length; i++) {%>
+                                <div class="backCandidate">  
+                                    <tr>
+                                        <td>DataCandidate[i].profile_pic</td>
+                                        <td>DataCandidate[i].name</td>
+                                        <td>Mais</td>
+                                        <td>Excluir</td>
+                                    </tr>
+                                </div>
+                            <%}%>
+                    </table>
+
+                </details>
+            </div>
+    </div>
+</body>
+
+</html>

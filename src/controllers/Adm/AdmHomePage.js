@@ -25,7 +25,7 @@ module.exports = {
 
 
             const DataProcess = await process.findAll({
-                attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'job'],
+                attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date', 'job'],
             });
 
 
@@ -50,6 +50,7 @@ module.exports = {
 
     async UpdateProcess(req, res) {
         const data = req.body;
+        console.log(data)
 
         await process.update({
             job: data.job,

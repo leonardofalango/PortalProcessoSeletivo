@@ -29,6 +29,7 @@ route.post('/registerEndPoint', multer(config).single('profile_pic'), home.regis
 route.post('/registerAdmEndPoint', multer(config).single('profile_pic'), home.registerAdm)
 route.post('/loginEndPoint', login.loginEndPoint)
 route.post('/AdmHomePageEndPoint', AdmHomePage.InsertProcess)
+
 route.post('/editProcess', AdmHomePage.UpdateProcess)
 route.post('/SubscribeEndPoint', process.Subscribe)
 route.post('/removeFromProcess', process.remove)
