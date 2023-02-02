@@ -1,7 +1,10 @@
 const sequelize = require('sequelize');
 //configurações da base de dados
-const database = new sequelize('LeoF', 'Falango', '154256852154256852', {
-    dialect: 'mssql', host:'localhost', port: 50181
+const database = new sequelize('take7', 'AulaJS', 'J@SqL0123_QWE',
+{
+    dialect: 'mssql', host:'localhost', port: 49721
 });
 database.sync();
 module.exports = database;
+
+// dialect: 'mssql', host:'localhost', port: 49721

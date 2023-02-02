@@ -1,0 +1,98 @@
+*{
+    padding: 10px!important;
+}
+
+
+body{
+    background-color: #C6C5BA;
+    padding: 0!important;
+}
+html {
+    padding: 0!important;
+}
+
+header{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color:  #DEDDD5;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding-right: 30px;
+    padding-left: 20px;
+}
+
+#Process{
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    background-color: #ffffff;
+    box-shadow: 1px 4px 8px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#Detalhes{
+    font-size: large;
+    padding-top: 10px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.Topics{
+    padding-top: 10px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.Inscrever{
+    display: flex;
+    justify-content: center;
+    transition: .3s;
+}
+
+
+.btn:hover{
+    background-color: white;
+    color: #0096e8;
+}
+
+.btn {
+    position: relative;
+    top: -50px;
+    left: 45rem;
+    background-color: #0096e8;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer; 
+    transition: all .3s;
+
+}
+
+summary {
+    position: relative;
+    width: 178.78px
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.xisde {
+    position: absolute;
+}
+
+.backCandidate{
+    position: relative;
+    top: -50px;
+    left: 45rem;
+}
