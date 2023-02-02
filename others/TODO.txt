@@ -1,0 +1,7 @@
+-- BACK --
+
+Rotas
+ - processDetails: POST de criar (Inscrever-se no processo)
+ - register: profile_pic, curriculum
+ 
+

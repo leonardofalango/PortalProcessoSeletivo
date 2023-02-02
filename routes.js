@@ -27,6 +27,7 @@ route.post('/register', home.postSignUp)
 route.post('/registerEndPoint', home.register)
 route.post('/loginEndPoint', login.loginEndPoint)
 route.post('/AdmHomePageEndPoint', AdmHomePage.InsertProcess)
+
 route.post('/editProcess', AdmHomePage.UpdateProcess)
 
 module.exports = route;

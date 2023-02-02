@@ -68,8 +68,8 @@
 
             <% for (let i = 0; i < DataProcess.length; i++) { %>
                 <tr>
-                <td><%= DataProcess[i].job %> </td> 
-                <td><%= DataProcess[i].date%> </td> 
+                    <td><%= `${DataProcess[i].date.getDay()}/${DataProcess[i].date.getMonth()}/${DataProcess[i].date.getFullYear()}` %> </td> 
+                    <td><%= DataProcess[i].job%> </td> 
                 <td><%= DataProcess[i].QtdInscritos %> </td> 
                 <td> <a id="link" href="/process/Details/<%=DataProcess[i].id%>"> Visualizar</a></td> 
                 <td> <a id="link" href="#popup2%>" onclick="(() => {changeProcess(<%=i%>, <%=JSON.stringify(DataProcess)%>)}) ()"> Editar</a> </td> 
@@ -80,10 +80,10 @@
                         <a class="close" href="#">&times;</a>
                         <div class="content">
                             <form method="POST" action="/editProcess">
-                                <input type="text" name="id" value="" hidden>
+                                <input type="text" name="id" value="<%=DataProcess[i].id%>" hidden>
                                 <input type="text" name="job" id="job" value=""  required> 
                                 <input type="number" name="capacity" id="capacity" required>
-                                <input type="date" name="date" id="date" required>
+                                <input type="date" name="date" id="date" value="" required>
                                 <input type="number" name="phases" id="phases" required>
                                 <textarea name="details" id="textArea" style="overflow-y: hidden;" required></textarea>
                                 <input type="number" name="subscription_fee" id="subscription_fee" required>
