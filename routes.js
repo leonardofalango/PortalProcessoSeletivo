@@ -21,7 +21,7 @@ route.get('/process/Details/:id',process.processDetailsGet);
 route.get('/AdmHomePage',AdmHomePage.AdmHomePageGet);
 route.get('/login/recover', recoveryPage.recoverPageGet)
 route.get('/disconnect', disc.disconnect)
-route.get('/AdmCandidate', AdmCandidate.AdmCandidates)
+route.get('/AdmCandidate/:id', AdmCandidate.AdmProcess)
 
 
 route.post('/register', home.postSignUp) 

@@ -71,7 +71,7 @@
                     <td><%= `${DataProcess[i].date.getDay()}/${DataProcess[i].date.getMonth()}/${DataProcess[i].date.getFullYear()}` %> </td> 
                     <td><%= DataProcess[i].job%> </td> 
                 <td><%= DataProcess[i].QtdInscritos %> </td> 
-                <td> <a id="link" href="/process/Details/<%=DataProcess[i].id%>"> Visualizar</a></td> 
+                <td> <a id="link" href="../AdmCandidate/<%=DataProcess[i].id%>"> Visualizar</a></td> 
                 <td> <a id="link" href="#popup2%>" onclick="(() => {changeProcess(<%=i%>, <%=JSON.stringify(DataProcess)%>)}) ()"> Editar</a> </td> 
 
                 <div id="popup2" class="overlay">  

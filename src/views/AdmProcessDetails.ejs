@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/AdmProcessDetails.css">
-    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="../css/AdmProcessDetails.css">
+    <link rel="stylesheet" href="../css/root.css">
     <title>Detalhes do Processo</title>
 </head>
 
@@ -55,11 +55,11 @@
                                 <td><b>Excluir</b></td>
                             </tr>
 
-                            <%for (let i = 0; i < DataCandidate.length; i++) {%>
+                            <%for (let i = 0; i < registered.length; i++) {%>
                                 <div class="backCandidate">  
                                     <tr>
-                                        <td>DataCandidate[i].profile_pic</td>
-                                        <td>DataCandidate[i].name</td>
+                                        <td>registered[i].id</td>
+                                        <td>registered[i].name</td>
                                         <td>Mais</td>
                                         <td>Excluir</td>
                                     </tr>

@@ -4,7 +4,7 @@ const database = require('../config/db');
 const Process = require('./Process');
 
 const cadidateProcess = database.define('CandidateXProcesses', { stage: sequelize.INTEGER })
-Candidate.belongsToMany(Process, { through: cadidateProcess , unique: false})
+Candidate.belongsToMany(Process, { through: cadidateProcess })
 Process.belongsToMany(Candidate, { through: cadidateProcess })
 
 module.exports = cadidateProcess;

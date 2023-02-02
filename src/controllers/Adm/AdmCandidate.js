@@ -7,47 +7,41 @@ const login = require('../../controllers/login')
 
 module.exports = {
 
-    async AdmCandidates(req, res) {
-        const response = await login.loginAdm(req, res)
+    // async AdmCandidates(req, res) {
+    //     const response = await login.loginAdm(req, res)
 
-        if (!response)
-            res.render('../views/401')
+    //     if (!response)
+    //         res.render('../views/401')
 
-        else {
-            const DataCandidates = await relation.findAll({
-                raw: true,
-                include: [{
-                    model: process,
-                    require: true,
-                    include: [{
-                        model: job,
-                        require: true
-                    }],
-                    model: candidate,
-                    require: true
-                }]
-            });
+    //     else {
+    //         const DataCandidates = await relation.findAll({
+    //             raw: true,
+    //         });
 
-            console.log(DataCandidates);
+    //         console.log(DataCandidates);
 
 
-            res.render("../views/AdmCandidate", { DataCandidates });
-        }
-    },
+    //         res.render("../views/AdmCandidate", { DataCandidates });
+    //     }
+    // },
 
     async AdmProcess(req, res) {
         const idProcess = req.params.id
         
-        const registered = relation.findAll({
+        const processo = await process.findByPk(req.params.id, {
             raw: true,
-            include: [{
-                model: candidate,
-                require: true
-            }, {
-                model: process,
-                require: true
-            }]
+            attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date', 'job']
+
         })
+        
+        const registered = await relation.findAll({
+            raw: true,
+            include: [candidate, process],
+        })
+
+        console.log(registered)
+
+        res.render('../views/AdmProcessDetails', { processo, registered })
     }
 
 }
