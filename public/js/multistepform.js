@@ -32,6 +32,7 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
+    change()
     document.getElementById("regForm").submit();
     return false;
   }
@@ -69,4 +70,13 @@ function fixStepIndicator(n) {
   }
   //... and adds the "active" class to the current step:
   x[n].className += " active";
+}
+
+function change() {
+  console.log("change function");
+  let signIn = document.getElementById("signIn-active")
+
+  let signInDiv = document.getElementById("div-signIn")
+
+  signInDiv.innerHTML = signIn.innerHTML;
 }

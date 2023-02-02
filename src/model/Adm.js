@@ -46,6 +46,12 @@ const Adm = database.define('Adm',{
         allowNull: false,
         unique: true
     },
+
+    profile_picture: {
+        type: sequelize.STRING(80),
+        allowNull: false,
+        unique: true
+    }
 });
 
 module.exports = Adm;
