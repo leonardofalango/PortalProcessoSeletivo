@@ -55,11 +55,11 @@
                                 <td><b>Excluir</b></td>
                             </tr>
 
-                            <%for (let i = 0; i < registered.length; i++) {%>
+                            <%for (let j = 0; j < i.length; j++) {%>
                                 <div class="backCandidate">  
                                     <tr>
-                                        <td>registered[i].id</td>
-                                        <td>registered[i].name</td>
+                                        <td><%=i[j].id%></td>
+                                        <td><%=i[j].name%></td>
                                         <td>Mais</td>
                                         <td>Excluir</td>
                                     </tr>

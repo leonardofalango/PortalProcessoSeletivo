@@ -36,7 +36,6 @@ function nextPrev(n) {
     return false;
   }
   // Otherwise, display the correct tab:
-  change()
   showTab(currentTab);
 }
 

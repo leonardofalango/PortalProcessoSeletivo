@@ -3,27 +3,11 @@ const candidate = require('../../model/Candidate')
 const process = require('../../model/Process')
 const relation = require('../../model/CandidateXProcess')
 const database = require('../../config/db')
+const sequelize  = require('sequelize')
+
 const login = require('../../controllers/login')
 
 module.exports = {
-
-    // async AdmCandidates(req, res) {
-    //     const response = await login.loginAdm(req, res)
-
-    //     if (!response)
-    //         res.render('../views/401')
-
-    //     else {
-    //         const DataCandidates = await relation.findAll({
-    //             raw: true,
-    //         });
-
-    //         console.log(DataCandidates);
-
-
-    //         res.render("../views/AdmCandidate", { DataCandidates });
-    //     }
-    // },
 
     async AdmProcess(req, res) {
         const idProcess = req.params.id
@@ -31,17 +15,27 @@ module.exports = {
         const processo = await process.findByPk(req.params.id, {
             raw: true,
             attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date', 'job']
+        })    
 
-        })
-        
-        const registered = await relation.findAll({
-            raw: true,
-            include: [candidate, process],
-        })
+        const registered = await database.query(`SELECT C.id, C.name FROM Candidates C 
+        join CandidateXProcesses CX on CX.CandidateId = C.id 
+        join Processes P on CX.ProcessId = P.id WHERE P.id = ${idProcess}` )
 
-        console.log(registered)
+        const list = []
 
-        res.render('../views/AdmProcessDetails', { processo, registered })
+        let index = 0;
+        registered.forEach(element => {
+            if (index % 2 == 0) {
+                list.push(element)
+            }
+            index++
+        });
+
+        let i = list[0]
+        console.log(i);
+        res.render('../views/AdmProcessDetails', { processo, i })
     }
 
 }
+
+// TROCAR NOME DE AdmCandidate PARA AdmProcessDetails

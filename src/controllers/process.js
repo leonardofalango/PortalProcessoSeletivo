@@ -8,7 +8,7 @@ module.exports = {
     async processDetailsGet(req, res) {
 
         const user = await login.returnUser(req, res)
-        if (login) {
+        if (user) {
             const processo = await process.findByPk(req.params.id, {
                 raw: true,
                 attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date', 'job']
@@ -21,7 +21,7 @@ module.exports = {
                     CandidateId: user.id,
                     ProcessId: processo.id
                 }
-            }) !== null? true : false
+            }) !== null? false : true
             
             res.render('../views/processDetails', {processo, isSub});
         }
