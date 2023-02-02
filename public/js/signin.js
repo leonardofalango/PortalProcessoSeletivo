@@ -5,11 +5,3 @@ btn.addEventListener("click", function(e) {
     console.log("clicked");
 })
 
-function change() {
-    console.log("change function");
-    let signIn = document.getElementById("signIn-active")
-
-    let signInDiv = document.getElementById("div-signIn")
-
-    signInDiv.innerHTML = signIn.innerHTML;
-}

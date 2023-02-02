@@ -1,4 +1,5 @@
 const user = require('../model/Candidate')
+const adm = require('../model/Adm')
 const crypto = require('crypto')
 
 module.exports = {
@@ -42,5 +43,25 @@ module.exports = {
             curriculum : data.curriculum
         })
         res.redirect('/')
+    },
+
+
+    async registerAdm(req, res){
+        const data = req.body
+
+        console.log(data);
+        let hash = crypto.createHash('md5').update(data.pass).digest('hex')
+
+        await adm.create({
+            name : data.name,
+            login : data.logIn,
+            email: data.email,
+            password : hash,
+            profile_pic : data.profile_pic,
+            birthdate : data.birthdate,
+            address : data.address,
+            cpf : data.cpf,
+        })
+        res.redirect('/AdmHomePage')
     },
 }
