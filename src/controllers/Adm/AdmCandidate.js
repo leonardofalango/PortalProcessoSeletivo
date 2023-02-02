@@ -35,4 +35,19 @@ module.exports = {
         }
     },
 
+    async AdmProcess(req, res) {
+        const idProcess = req.params.id
+        
+        const registered = relation.findAll({
+            raw: true,
+            include: [{
+                model: candidate,
+                require: true
+            }, {
+                model: process,
+                require: true
+            }]
+        })
+    }
+
 }

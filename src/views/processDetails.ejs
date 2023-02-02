@@ -17,11 +17,11 @@
         <p>Detalhes Sobre a Vaga</p>
     </header>
    
-    <div class="content">
+    <form class="content" action="/SubscribeEndPoint" method="POST">
         <div class="card">
 
             <div id="Process">
-                <p>Processo de <%= processo['Job.name'] %></p>
+                <p>Processo de <%= processo.job %></p>
             </div>
 
             <div id="Detalhes">
@@ -39,11 +39,17 @@
             </div>
 
             <div class="Inscrever">
-                <button class="btn" type="submit" name="Subscribe">Se Inscrever</button>
+                <button class="<%=isSub == true? "btn-disabled" : "btn"%>" type="submit" name="Subscribe"
+                <%=isSub == true? "disabled" : ""%>
+                >
+                    <%=isSub == true? "Inscrito" : "Se Inscrever"%>
+                </button>
             </div>
 
+            <input type="text" hidden value="<%=processo.id%>" name="idProcess">
+
         </div>
-    </div>
+    </form>
 
 </body>
 

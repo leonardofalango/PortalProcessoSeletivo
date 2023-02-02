@@ -25,6 +25,17 @@ module.exports = {
         return admUser !== null;
     },
 
+    async returnUser(req, res) {
+        const user = await Candidate.findOne({
+            raw: true,
+            where: {
+                login: req.session.user,
+                password: req.session.pass
+            }
+        })
+        return user;
+    },
+
     async disconnect(req, res) {
         saveLogin.unsaveLogin(req, res)
         res.redirect('/')

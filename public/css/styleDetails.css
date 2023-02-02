@@ -84,3 +84,17 @@ header{
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
+.btn-disabled {
+    background-color: #939393;
+    color: white;
+    width: 200px;
+    height: 40px;    
+    border-radius: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s;
+    text-align: center;
+}
