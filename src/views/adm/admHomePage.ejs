@@ -38,7 +38,7 @@
                             <a class="close" href="#">&times;</a>
                             
                             <div class="content">
-                                <form method="POST" action="/AdmHomePageEndPoint">
+                                <form method="POST" action="/admHomePageEndPoint">
                                     <input type="text" name="job" id="job" placeholder="Nome da Vaga" required> 
                                     <input type="number" name="capacity" id="capacity" placeholder="Capacidade" required>
                                     <input type="date" name="date" id="date" placeholder="Data Limite de Inscrição" required>
@@ -71,7 +71,7 @@
                     <td><%= `${DataProcess[i].date.getDay()}/${DataProcess[i].date.getMonth()}/${DataProcess[i].date.getFullYear()}` %> </td> 
                     <td><%= DataProcess[i].job%> </td> 
                 <td><%= DataProcess[i].QtdInscritos %> </td> 
-                <td> <a id="link" href="../AdmCandidate/<%=DataProcess[i].id%>"> Visualizar</a></td> 
+                <td> <a id="link" href="../admCandidate/<%=DataProcess[i].id%>"> Visualizar</a></td> 
                 <td> <a id="link" href="#popup2%>" onclick="(() => {changeProcess(<%=i%>, <%=JSON.stringify(DataProcess)%>)}) ()"> Editar</a> </td> 
 
                 <div id="popup2" class="overlay">  

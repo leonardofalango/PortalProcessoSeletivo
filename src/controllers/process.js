@@ -1,4 +1,4 @@
-const login = require('./login')
+const login = require('./login/login')
 const process = require('../model/Process');
 const candidate = require('../model/Candidate');
 const relation = require('../model/CandidateXProcess')
@@ -23,10 +23,10 @@ module.exports = {
                 }
             }) !== null? false : true
             
-            res.render('../views/processDetails', {processo, isSub});
+            res.render('../views/user/processDetails', {processo, isSub});
         }
         else
-            res.render("401")
+            res.render("../views/erro/401")
     },
 
     async Subscribe(req, res) {
@@ -61,9 +61,9 @@ module.exports = {
                     ProcessId: proc.id
                 }
             })
-            res.redirect('/AdmProcessDetails/' + req.body.ProcessId)
+            res.redirect('/admProcessDetails/' + req.body.ProcessId)
         }
-        else res.render('../views/401')
+        else res.render('../views/erro/401')
 
     }
 
