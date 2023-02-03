@@ -27,7 +27,7 @@ route.get('/user/:id', user.userPage)
 
 
 route.post('/register', home.postSignUp) 
-route.post('/registerEndPoint', multer(config).single('profile_pic'), home.register)
+route.post('/registerEndPoint', multer(config).any('profile_pic', 'curriculum'), home.register)
 route.post('/registerAdmEndPoint', multer(config).single('profile_pic'), home.registerAdm)
 route.post('/loginEndPoint', login.loginEndPoint)
 route.post('/admHomePageEndPoint', admHomePage.insertProcess)

@@ -16,5 +16,22 @@ function changeName() {
 }
 
 document.getElementById("profile-pic").addEventListener("click", function(event) {
-    document.getElementById("input-profile-pic").click()
+    changeName()
+    let file = document.getElementById("input-profile-pic")
+    file.click()    
+})
+
+document.getElementById("profile-pic").addEventListener("change", function(event) {
+    let photo = document.getElementById('profile-pic');
+    let file = document.getElementById("input-profile-pic")
+    if (file.files.length == 0) {
+        return;
+    }
+    let reader = new FileReader();
+    // Está pegando o caminho da imagem
+    reader.readAsDataURL(file.files[0]);
+    // Coloca o caminho da imagem no Source da tag IMG
+    reader.onload = () => {
+    photo.style.backgroundImage = 'url("' + reader.result + '")'
+    } 
 })
