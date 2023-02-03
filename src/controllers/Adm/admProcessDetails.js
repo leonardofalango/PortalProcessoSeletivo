@@ -5,7 +5,7 @@ const relation = require('../../model/CandidateXProcess')
 const database = require('../../config/db')
 const sequelize  = require('sequelize')
 
-const login = require('../../controllers/login')
+const login = require('../login/login')
 
 module.exports = {
 
@@ -33,7 +33,7 @@ module.exports = {
 
         let i = list[0]
         console.log(i);
-        res.render('../views/AdmProcessDetails', { processo, i })
+        res.render('../views/adm/AdmProcessDetails', { processo, i })
     }
 
 }

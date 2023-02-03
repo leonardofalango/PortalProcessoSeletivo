@@ -4,9 +4,9 @@ const process = require('../../model/Process')
 const adm = require('../../model/Adm')
 const relation = require('../../model/CandidateXProcess')
 const database = require('../../config/db')
-const login = require('../../controllers/login')
+const login = require('../login/login')
 const { Sequelize } = require('sequelize')
-const admcand = require('../../controllers/Adm/AdmCandidate')
+const admcand = require('./admProcessDetails')
 
 module.exports = {
 
@@ -14,7 +14,7 @@ module.exports = {
         const response = await login.loginAdm(req, res)
 
         if (!response)
-            res.render('../views/401')
+            res.render('../views/erro/401')
 
         else {
             const QtdCandidates = await relation.findAll({
@@ -30,7 +30,7 @@ module.exports = {
 
 
 
-            res.render("../views/AdmHomePage", { QtdCandidates, DataProcess });
+            res.render("../views/adm/AdmHomePage", { QtdCandidates, DataProcess });
         }
     },
 

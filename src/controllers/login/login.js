@@ -1,5 +1,5 @@
-const Candidate = require('../model/Candidate');
-const adm = require('../model/Adm');
+const Candidate = require('../../model/Candidate');
+const adm = require('../../model/Adm');
 const saveLogin = require('./saveLogin');
 
 module.exports = {

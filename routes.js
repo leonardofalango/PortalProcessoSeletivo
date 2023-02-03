@@ -3,14 +3,14 @@ const route = express.Router();
 const multer = require('multer')
 const config = require('./src/config/multer')
 
-const home = require('./src/controllers/landingPage');
+const home = require('./src/controllers/login/landingPage');
 const homePage = require('./src/controllers/homePage');
 const process = require('./src/controllers/process');
-const login = require('./src/controllers/loginPage');
-const AdmHomePage = require('./src/controllers/Adm/AdmHomePage');
-const recoveryPage = require('./src/controllers/recover')
-const disc = require('./src/controllers/login')
-const AdmCandidate = require('./src/controllers/Adm/AdmCandidate')
+const login = require('./src/controllers/login/loginPage');
+const AdmHomePage = require('./src/controllers/adm/admHomePage');
+const recoveryPage = require('./src/controllers/login/recover')
+const disc = require('./src/controllers/login/login')
+const AdmCandidate = require('./src/controllers/adm/admProcessDetails')
 
 
 route.get('/', home.getLandingPage);
@@ -21,7 +21,7 @@ route.get('/process/Details/:id',process.processDetailsGet);
 route.get('/AdmHomePage',AdmHomePage.AdmHomePageGet);
 route.get('/login/recover', recoveryPage.recoverPageGet)
 route.get('/disconnect', disc.disconnect)
-route.get('/AdmCandidate/:id', AdmCandidate.AdmProcess)
+route.get('/admCandidate/:id', AdmCandidate.AdmProcess)
 
 
 route.post('/register', home.postSignUp) 

@@ -1,7 +1,7 @@
-const user = require('../model/Candidate')
+const user = require('../../model/Candidate')
 const crypto = require('crypto');
-const Candidate = require('../model/Candidate');
-const log = require('../controllers/login')
+const Candidate = require('../../model/Candidate');
+const log = require('./login')
 
 module.exports = {
     async saveLogin(req, res){

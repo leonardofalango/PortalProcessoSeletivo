@@ -1,5 +1,5 @@
-const user = require('../model/Candidate')
-const adm = require('../model/Adm')
+const user = require('../../model/Candidate')
+const adm = require('../../model/Adm')
 const crypto = require('crypto')
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     },
 
     async getLogin(req, res){
-        res.render('../views/signin')
+        res.render('../views/login/signin')
     },
     
     async postSignUp(req, res){
@@ -20,7 +20,7 @@ module.exports = {
             res.render('../views/register', {userData})
         console.log(userData);
         
-        res.render('../views/register', {userData : ['', '', '']});
+        res.render('../views/login/register', {userData : ['', '', '']});
     },
 
 
