@@ -1,6 +1,5 @@
 const user = require('../../model/Candidate')
 const login = require('./login')
-const { saveLogin } = require('./saveLogin')
 const save = require('./saveLogin')
 
 

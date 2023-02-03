@@ -1,7 +1,4 @@
-const { name } = require('ejs');
-const user = require('../model/Candidate')
 const process = require('../model/Process')
-const relation = require('../model/CandidateXProcess')
 const login = require('./login/login')
 
 module.exports = {

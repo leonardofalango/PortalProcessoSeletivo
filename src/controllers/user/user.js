@@ -1,6 +1,5 @@
-const Candidate = require('../model/Candidate');
-const adm = require('../model/Adm');
-const login = require('../controllers/login')
+const Candidate = require('../../model/Candidate');
+const login = require('../login/login')
 
 module.exports = {
     async userPage(req, res) {

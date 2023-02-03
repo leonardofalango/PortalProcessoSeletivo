@@ -1,6 +1,6 @@
 const Candidate = require('../../model/Candidate');
 const adm = require('../../model/Adm');
-const saveLogin = require('./saveLogin');
+const saveLogin = require('../login/saveLogin')
 
 module.exports = {
     async login(req, res) {

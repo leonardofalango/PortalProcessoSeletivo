@@ -3,13 +3,11 @@ const candidate = require('../../model/Candidate')
 const process = require('../../model/Process')
 const relation = require('../../model/CandidateXProcess')
 const database = require('../../config/db')
-const sequelize  = require('sequelize')
-
 const login = require('../login/login')
 
 module.exports = {
 
-    async AdmProcess(req, res) {
+    async admProcess(req, res) {
         const idProcess = req.params.id
         
         const processo = await process.findByPk(req.params.id, {

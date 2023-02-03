@@ -1,7 +1,7 @@
-const login = require('./login/login')
-const process = require('../model/Process');
-const candidate = require('../model/Candidate');
-const relation = require('../model/CandidateXProcess')
+const login = require('../login/login')
+const process = require('../../model/Process');
+const candidate = require('../../model/Candidate');
+const relation = require('../../model/CandidateXProcess')
 
 
 module.exports = {

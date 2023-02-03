@@ -1,16 +1,12 @@
 
-const candidate = require('../../model/Candidate')
 const process = require('../../model/Process')
-const adm = require('../../model/Adm')
 const relation = require('../../model/CandidateXProcess')
 const database = require('../../config/db')
 const login = require('../login/login')
-const { Sequelize } = require('sequelize')
-const admcand = require('./admProcessDetails')
 
 module.exports = {
 
-    async AdmHomePageGet(req, res) {
+    async admHomePageGet(req, res) {
         const response = await login.loginAdm(req, res)
 
         if (!response)
@@ -34,7 +30,7 @@ module.exports = {
         }
     },
 
-    async InsertProcess(req, res) {
+    async insertProcess(req, res) {
         const data = req.body;
 
         await process.create({
@@ -48,7 +44,7 @@ module.exports = {
         res.redirect('/admHomePage')
     },
 
-    async UpdateProcess(req, res) {
+    async updateProcess(req, res) {
         const data = req.body;
         console.log(data)
 
