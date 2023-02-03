@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <p> <a href="/homePage" style="text-decoration: none; color: black;">Voltar</a></p>
+        <p> <a href="/AdmHomePage" style="text-decoration: none; color: black;">Voltar</a></p>
         <p>Detalhes Sobre a Vaga</p>
     </header>
    
@@ -25,57 +25,48 @@
             <div id="Detalhes">
                 <p>Detalhes sobre a vaga: <%= processo.details%></p>
             </div>
+            <div class="container d-flex">
+                <div class="Topics">
+                    <p>Data limite de inscrição: <%= `${processo.date.getDay()}/${processo.date.getMonth()}/${processo.date.getFullYear()}` %></p>
 
-            <div class="Topics">
-                <p>Data limite de inscrição: <%= `${processo.date.getDay()}/${processo.date.getMonth()}/${processo.date.getFullYear()}` %></p>
+                    <p>Taxa de inscrição: R$<%=processo.subscription_fee %></p>
 
-                <p>Taxa de inscrição: R$<%=processo.subscription_fee %></p>
+                    <p>Etapas: <%=processo.phases %></p>
 
-                <p>Etapas: <%=processo.phases %></p>
-
-                <p>Vagas: <%= processo.capacity %></p>
+                    <p>Vagas: <%= processo.capacity %></p>
+                </div>
+                    <btn class="btn" id="btn-subs">Ver Inscritos</btn>
+                </div>
             </div>
+            <table id="subscribes" class="container bordered  highlight responsive-table">                        
+                <tr>
+                    <td><b>Foto</b></td>
+                    <td><b>Nome</b></td>
+                    <td><b>Detalhes</b></td>
+                    <td><b>Excluir</b></td>
+                </tr>
 
-           
-                <details class="xisde">
-                    <summary class="btn rel">Ver Inscritos</summary>
-            
-
-                    <table class="container bordered  highlight responsive-table" style="position: relative;
-                    top: -50px;
-                    left: 10rem;">
-
-                        
-                            <tr>
-                                <td><b>Foto</b></td>
-                                <td><b>Nome</b></td>
-                                <td><b>Detalhes</b></td>
-                                <td><b>Excluir</b></td>
-                            </tr>
-
-                            <%for (let j = 0; j < i.length; j++) {%>
-                                <div class="backCandidate">  
-                                    <tr>
-                                        <td><%=i[j].id%></td>
-                                        <td><%=i[j].name%></td>
-                                        <td>Mais</td>
-                                        <form action="/removeFromProcess" method="POST">
-                                            <td>
-                                                <input type="text" name="ProcessId" value="<%=processo.id%>" hidden></input>
-                                                <button type="submit" class="btn" value="<%=i[j].id%>" name="idUser">
-                                                    Excluir
-                                                </button>
-                                            </td>
-                                        </form>
-                                    </tr>
-                                </div>
-                            <%}%>
-                    </table>
-
-                </details>
-            </div>
+                <%for (let j = 0; j < i.length; j++) {%>
+                        <tr>
+                            <td><%=i[j].id%></td>
+                            <td><%=i[j].name%></td>
+                            <td>Mais</td>
+                            <form action="/removeFromProcess" method="POST">
+                                <td>
+                                    <input type="text" name="ProcessId" value="<%=processo.id%>" hidden></input>
+                                    <button type="submit" class="btn" value="<%=i[j].id%>" name="idUser">
+                                        Excluir
+                                    </button>
+                                </td>
+                            </form>
+                        </tr>
+                    </div>
+                <%}%>
+            </table>
         </div>
     </div>
+
+    <script src="../js/showSubs.js"></script>
 </body>
 
 </html>

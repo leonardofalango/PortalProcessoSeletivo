@@ -61,7 +61,7 @@ module.exports = {
                     ProcessId: proc.id
                 }
             })
-            res.redirect('/admProcessDetails/' + req.body.ProcessId)
+            res.redirect('/AdmCandidate/' + req.body.ProcessId)
         }
         else res.render('../views/erro/401')
 
