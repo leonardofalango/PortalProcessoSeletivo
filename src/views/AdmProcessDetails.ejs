@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <header>
         <p> <a href="/homePage" style="text-decoration: none; color: black;">Voltar</a></p>
         <p>Detalhes Sobre a Vaga</p>
@@ -19,11 +18,10 @@
    
     <div class="content">
         <div class="card">
-
             <div id="Process">
                 <p>Processo de <%= processo.job %></p>
             </div>
-
+            
             <div id="Detalhes">
                 <p>Detalhes sobre a vaga: <%= processo.details%></p>
             </div>
@@ -40,7 +38,7 @@
 
            
                 <details class="xisde">
-                    <summary class="btn ">Ver Inscritos</summary>
+                    <summary class="btn rel">Ver Inscritos</summary>
             
 
                     <table class="container bordered  highlight responsive-table" style="position: relative;
@@ -61,7 +59,14 @@
                                         <td><%=i[j].id%></td>
                                         <td><%=i[j].name%></td>
                                         <td>Mais</td>
-                                        <td>Excluir</td>
+                                        <form action="/removeFromProcess" method="POST">
+                                            <td>
+                                                <input type="text" name="ProcessId" value="<%=processo.id%>" hidden></input>
+                                                <button type="submit" class="btn" value="<%=i[j].id%>" name="idUser">
+                                                    Excluir
+                                                </button>
+                                            </td>
+                                        </form>
                                     </tr>
                                 </div>
                             <%}%>
@@ -69,6 +74,7 @@
 
                 </details>
             </div>
+        </div>
     </div>
 </body>
 

@@ -45,25 +45,23 @@ module.exports = {
 
     async remove(req, res) {
 
-        const isLog = login.loginAdm();
+        const isLog = await login.loginAdm(req, res);
         if (isLog)
-        {
-            
-                    const cand = await login.returnUser(req, res)
-                    const proc = await process.findByPk(req.params.id, {
-                        raw: true,
-                        attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date', 'job']
-            
-                    })
-            
-                    relation.destroy({
-                        raw: true,
-                        where: {
-                            CandidateId: user.id,
-                            ProcessId: processo.id
-                        }
-                    })
-                    res.redirect('/AdmProcessDetails/' + req.params.id)
+        {            
+            const proc = await process.findByPk(req.body.ProcessId, {
+                raw: true,
+                attributes: ['id']
+    
+            })
+    
+            await relation.destroy({
+                raw: true,
+                where: {
+                    CandidateId: req.body.idUser,
+                    ProcessId: proc.id
+                }
+            })
+            res.redirect('/AdmProcessDetails/' + req.body.ProcessId)
         }
         else res.render('../views/401')
 

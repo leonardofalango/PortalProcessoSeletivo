@@ -61,9 +61,6 @@ header{
 }
 
 .btn {
-    position: relative;
-    top: -50px;
-    left: 45rem;
     background-color: #0096e8;
     color: white;
     border-radius: 50px;
@@ -73,6 +70,12 @@ header{
     cursor: pointer; 
     transition: all .3s;
 
+}
+
+.rel {
+    position: relative;
+    top: -50px;
+    left: 45rem;
 }
 
 summary {
