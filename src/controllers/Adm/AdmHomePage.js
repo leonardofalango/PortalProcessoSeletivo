@@ -13,20 +13,17 @@ module.exports = {
             res.render('../views/erro/401')
 
         else {
-            const QtdCandidates = await relation.findAll({
-                raw: true,
-                group: "ProcessId",
-                attributes: ['ProcessId', [database.fn('COUNT', database.col('CandidateId')), 'quantCandidates']]
-            });
+            const DataProcess = await database.query(
+                `SELECT cp.ProcessId, p.job, p.phases, p.details, p.date, COUNT(cp.ProcessId) as NumeroDeInscritos from CandidateXProcesses cp
+                    JOIN Processes p ON
+                        p.id = cp.ProcessId
+                    GROUP BY cp.ProcessId, p.job, p.phases, p.details, p.date`
+            );
+
+            console.log(DataProcess)
 
 
-            const DataProcess = await process.findAll({
-                attributes: ['id', 'capacity', 'details', 'phases', 'subscription_fee', 'date', 'job'],
-            });
-
-
-
-            res.render("../views/adm/AdmHomePage", { QtdCandidates, DataProcess });
+            res.render("../views/adm/AdmHomePage", { DataProcess });
         }
     },
 

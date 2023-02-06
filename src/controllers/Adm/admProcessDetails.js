@@ -35,5 +35,3 @@ module.exports = {
     }
 
 }
-
-// TROCAR NOME DE AdmCandidate PARA AdmProcessDetails
