@@ -19,7 +19,7 @@ module.exports = {
                 });
                 realName = realName.join(" ")
                 user.name = realName
-                res.render("../views/user", { user })
+                res.render("../views/user/user", { user })
             }
     }
 }

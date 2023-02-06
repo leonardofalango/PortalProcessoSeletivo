@@ -15,8 +15,7 @@ module.exports = {
     async postSignUp(req, res){
         const data = req.body
 
-        const userData = [data.name, data.login, data.password]
-        console.log(userData);
+        const userData = [data.name, data.login, data.email]
         if (userData[0] || userData[1] || userData[2])
         res.render('../views/login/register', {userData})
         else{
