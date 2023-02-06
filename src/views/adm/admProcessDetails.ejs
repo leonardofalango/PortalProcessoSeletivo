@@ -40,7 +40,7 @@
             </div>
             <table id="subscribes" class="container bordered  highlight responsive-table">                        
                 <tr>
-                    <td><b>Foto</b></td>
+                    <td><b>Id</b></td>
                     <td><b>Nome</b></td>
                     <td><b>Detalhes</b></td>
                     <td><b>Excluir</b></td>
@@ -50,7 +50,11 @@
                         <tr>
                             <td><%=i[j].id%></td>
                             <td><%=i[j].name%></td>
-                            <td>Mais</td>
+                            <td>
+                                <a href="../../user/<%=i[j].id%>"
+                                    style="text-decoration: none;" 
+                                    >Mais</a>
+                            </td>
                             <form action="/removeFromProcess" method="POST">
                                 <td>
                                     <input type="text" name="ProcessId" value="<%=processo.id%>" hidden></input>
