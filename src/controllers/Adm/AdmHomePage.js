@@ -14,14 +14,11 @@ module.exports = {
 
         else {
             const DataProcess = await database.query(
-                `SELECT cp.ProcessId, p.job, p.phases, p.details, p.date, COUNT(cp.ProcessId) as NumeroDeInscritos from CandidateXProcesses cp
+                `SELECT cp.ProcessId, p.job, p.subscription_fee, p.phases, p.details, p.id, p.capacity, p.date, COUNT(cp.ProcessId) as NumeroDeInscritos from CandidateXProcesses cp
                     JOIN Processes p ON
                         p.id = cp.ProcessId
-                    GROUP BY cp.ProcessId, p.job, p.phases, p.details, p.date`
+                    GROUP BY cp.ProcessId, p.job, p.phases, p.details, p.date, p.capacity, p.id, p.subscription_fee`
             );
-
-            console.log(DataProcess)
-
 
             res.render("../views/adm/AdmHomePage", { DataProcess });
         }

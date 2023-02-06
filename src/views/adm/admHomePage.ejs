@@ -66,13 +66,13 @@
 
             
 
-            <% for (let i = 0; i < DataProcess.length; i++) { %>
+            <% for (let i = 0; i < DataProcess[0].length; i++) { %>
                 <tr>
-                    <td><%= `${DataProcess[i].date.getDay()}/${DataProcess[i].date.getMonth()}/${DataProcess[i].date.getFullYear()}` %> </td> 
-                    <td><%= DataProcess[i].job%> </td> 
-                <td><%= DataProcess.NumeroDeInscritos %> </td> 
-                <td> <a id="link" href="../admCandidate/<%=DataProcess[i].id%>"> Visualizar</a></td> 
-                <td> <a id="link" href="#popup2%>" onclick="(() => {changeProcess(<%=i%>, <%=JSON.stringify(DataProcess)%>)}) ()"> Editar</a> </td> 
+                    <td><%= `${DataProcess[0][i].date.getDay()}/${DataProcess[0][i].date.getMonth()}/${DataProcess[0][i].date.getFullYear()}` %> </td> 
+                    <td><%= DataProcess[0][i].job%> </td> 
+                <td><%= DataProcess[0][i].NumeroDeInscritos %> </td> 
+                <td> <a id="link" href="../admCandidate/<%=DataProcess[0][i].id%>"> Visualizar</a></td> 
+                <td> <a id="link" href="#popup2%>" onclick="(() => {changeProcess(<%=i%>, <%=JSON.stringify(DataProcess[0])%>)}) ()"> Editar</a> </td> 
 
                 <div id="popup2" class="overlay">  
                     <div class="popup">
@@ -80,7 +80,7 @@
                         <a class="close" href="#">&times;</a>
                         <div class="content">
                             <form method="POST" action="/editProcess">
-                                <input type="text" name="id" value="<%=DataProcess[i].id%>" hidden>
+                                <input type="text" name="id" value="<%=DataProcess[0][i].id%>" hidden>
                                 <input type="text" name="job" id="job" value=""  required> 
                                 <input type="number" name="capacity" id="capacity" required>
                                 <input type="date" name="date" id="date" value="" required>

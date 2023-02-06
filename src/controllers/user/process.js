@@ -15,13 +15,13 @@ module.exports = {
 
             })
 
-            const isSub = relation.findOne({
+            const isSub = await relation.findOne({
                 raw: true,
                 where: {
                     CandidateId: user.id,
                     ProcessId: processo.id
                 }
-            }) !== null? false : true
+            }) != null? true : false
             
             res.render('../views/user/processDetails', {processo, isSub});
         }
